@@ -316,7 +316,7 @@ static void DrawScanlineBars()
 
     SetShaderModifier(IMGUI_SHADER_MODIFIER_NONE);
 
-    DrawTitle();
+    // DrawTitle();
 
     auto drawLine = [&](bool top)
     {
@@ -353,7 +353,7 @@ static void DrawScanlineBars()
     // Bottom bar line
     drawLine(false);
 
-    DrawVersionString(g_newRodinFont);
+    // DrawVersionString(g_newRodinFont);
 }
 
 static float AlignToNextGrid(float value)
@@ -1761,7 +1761,7 @@ void OptionsMenu::Draw()
         float minY = round(g_aspectRatioOffsetY + Scale(CONTAINER_POS_Y));
         float maxY = round(g_aspectRatioOffsetY + Scale((720.0f - CONTAINER_POS_Y + 1.0f)));
 
-        DrawSettingsPanel(
+        /*DrawSettingsPanel(
             { minX, minY },
             { minX + Scale(settingsGridCount * GRID_SIZE), maxY }
         );
@@ -1772,7 +1772,7 @@ void OptionsMenu::Draw()
         );
 
         if (g_isStage)
-            DrawFadeTransition();
+            DrawFadeTransition();*/
     }
 
     s_isRestartRequired = Config::Language != App::s_language;

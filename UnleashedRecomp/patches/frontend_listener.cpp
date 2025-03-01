@@ -21,7 +21,10 @@ public:
             if (event->key.keysym.sym != SDLK_F8 || m_isF8KeyDown)
                 break;
 
-            *SWA::SGlobals::ms_IsRenderHud = !*SWA::SGlobals::ms_IsRenderHud;
+			// Force it disable by calling it twice. Because sometimes it doesn't work :D
+            *SWA::SGlobals::ms_IsRenderHud = false;
+            *SWA::SGlobals::ms_IsRenderHud = false;
+			OptionsMenu::Open();
 
             LOGFN("HUD {}", *SWA::SGlobals::ms_IsRenderHud ? "ON" : "OFF");
 
